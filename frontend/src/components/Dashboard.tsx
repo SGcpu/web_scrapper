@@ -112,8 +112,8 @@ export const Dashboard: React.FC = () => {
             Quick Actions
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <button 
-              onClick={() => window.location.href = '/products/new'}
+            <button
+              onClick={() => (window.location.href = "/products/new")}
               className="flex items-center justify-center px-4 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               <svg
@@ -131,8 +131,8 @@ export const Dashboard: React.FC = () => {
               </svg>
               Add New Product
             </button>
-            <button 
-              onClick={() => window.location.href = '/scraping'}
+            <button
+              onClick={() => (window.location.href = "/scraping")}
               className="flex items-center justify-center px-4 py-3 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               <svg
@@ -150,8 +150,8 @@ export const Dashboard: React.FC = () => {
               </svg>
               Import Reviews
             </button>
-            <button 
-              onClick={() => window.location.href = '/analysis'}
+            <button
+              onClick={() => (window.location.href = "/analysis")}
               className="flex items-center justify-center px-4 py-3 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               <svg
