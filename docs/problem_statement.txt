@@ -1,0 +1,41 @@
+Backstory:
+In the age of e-commerce, customer reviews are a critical factor in purchasing
+decisions. However, popular products can accumulate hundreds or thousands of
+reviews, making it impossible for a shopper to read them all. This information
+overload leads to
+'
+analysis paralysis
+'
+or reliance on just a few top reviews, which
+may not be representative of the overall consensus. Shoppers need a way to
+quickly and accurately digest the collective opinion hidden within the text.
+Problem Statement:
+Develop
+'Review Radar,
+'
+a web tool and browser extension that automates the
+process of product review analysis. The platform
+'
+s objective is to ingest the URL
+of an e-commerce product page, scrape its customer reviews, and apply a pretrained sentiment analysis model to generate a simple, actionable dashboard
+that summarizes the overall public opinion and key product attributes.
+Key Features:
+URL-Based Web Scraper: A robust module that accepts a product page URL
+from major e-commerce sites and automatically navigates and extracts the
+text content of all customer reviews.
+Pre-trained Sentiment Classifier: The core of the tool, which uses a pretrained sentiment analysis model (e.g., from Hugging Face) to classify each
+scraped review as positive, negative, or neutral.
+Keyword & Topic Extraction: An algorithm that performs topic modeling or
+keyword extraction (like TF-IDF) on the positive and negative review sets to
+identify the most frequently mentioned product features or issues (e.g.,
+"battery,
+" "
+screen,
+" "
+customer service
+").
+Simple Summary Dashboard: A clean, easy-to-understand user interface that
+visualizes the analysis with a sentiment breakdown pie chart (e.g.,
+"85%
+Positive
+"), and a list of the top positive and negative keywords.
