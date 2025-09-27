@@ -1,27 +1,51 @@
-# Review Radar MVP
+# Review Radar - Web Scraping & Sentiment Analysis Tool
 
-A comprehensive review analysis platform that combines web scraping, ML-powered sentiment analysis, and browser extension capabilities to provide actionable insights from product reviews across e-commerce platforms.
+A comprehensive review analysis platform that scrapes e-commerce product reviews and provides sentiment analysis to deliver actionable insights through an interactive dashboard.
 
-## 🌟 Features
+## 🌟 Current Implementation Status
 
-- **URL-Based Web Scraper**: Robust module that extracts customer reviews from major e-commerce sites
-- **Pre-trained Sentiment Analysis**: Uses Hugging Face models for accurate sentiment classification
-- **Keyword & Topic Extraction**: Advanced NLP techniques for identifying key product attributes
-- **Interactive Dashboard**: Clean, user-friendly interface with sentiment visualization
-- **Chrome Extension**: Seamless browser integration for instant analysis
-- **Aspect-Based Analysis**: Detailed breakdown of sentiment by product features
+### Completed Features:
+- **Robust Web Scraper**: 
+  - Amazon product scraper with anti-bot measures
+  - Fallback mechanisms for handling authentication challenges
+  - Detailed debugging and logging capabilities
+
+- **Backend API Infrastructure**: 
+  - FastAPI endpoints for product and review management
+  - Background task processing for scraping operations
+  - Database models for products, reviews, and scraping sessions
+
+- **Frontend Dashboard**: 
+  - Basic UI for product review visualization
+  - Displays scraped reviews and analysis results
+  - Real-time scraping status updates
+
+### In Progress:
+- **Sentiment Analysis Integration**: Connecting pre-trained sentiment models
+- **Enhanced Error Handling**: Improved resilience in scraping operations
+- **Support for Additional E-commerce Sites**: Beyond Amazon
 
 ## 🏗️ Project Structure
 
 ```
-review-radar/
-├── backend/          # FastAPI + ML pipeline
-├── frontend/         # React + Vite dashboard
-├── extension/        # Chrome extension
-├── shared/          # Shared types and utilities
-├── docs/            # Documentation
-├── venv/            # Python virtual environment
-└── requirements.txt # Python dependencies
+Webscraper_sentimental/
+├── backend/                   # FastAPI backend application
+│   ├── app/                   # Core application
+│   │   ├── api/               # API endpoints
+│   │   ├── core/              # Core configurations
+│   │   ├── database/          # Database connections
+│   │   ├── models/            # Data models
+│   │   └── scrapers/          # Web scrapers for different sites
+│   ├── debug_screenshots/     # Debug screenshots from scraper runs
+│   └── main.py                # FastAPI application entry point
+├── frontend/                  # React/TypeScript frontend
+│   ├── public/                # Static assets
+│   └── src/                   # Source code
+│       ├── components/        # React components
+│       ├── hooks/             # Custom React hooks
+│       └── services/          # API services
+├── docs/                      # Project documentation
+└── venv/                      # Python virtual environment
 ```
 
 ## 🚀 Quick Start
@@ -75,7 +99,7 @@ venv\Scripts\activate  # Windows
 
 # Start FastAPI server
 cd backend
-uvicorn main:app --reload
+python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 ### Frontend Development
@@ -84,8 +108,11 @@ cd frontend
 npm run dev
 ```
 
-### Extension Development
-Load the extension directory in Chrome's developer mode.
+### Quick Setup
+Run the `setup.ps1` PowerShell script to automatically set up the entire project:
+```powershell
+.\setup.ps1
+```
 
 ## 🧪 Testing
 
@@ -106,11 +133,11 @@ Once the backend is running, visit:
 
 ## 🛠️ Technology Stack
 
-- **Backend**: FastAPI, SQLAlchemy, Playwright, Transformers
-- **Frontend**: React, TypeScript, Vite, Recharts
-- **Extension**: Manifest V3, Content Scripts
-- **ML**: Hugging Face Transformers, KeyBERT, BERTopic
+- **Backend**: FastAPI, SQLAlchemy, Playwright for browser automation
+- **Frontend**: React, TypeScript, Vite
 - **Database**: SQLite
+- **Web Scraping**: Custom scrapers with anti-detection mechanisms
+- **Future ML Integration**: Hugging Face Transformers for sentiment analysis
 
 ## 📄 License
 
